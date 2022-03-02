@@ -1,0 +1,131 @@
+
+{%extends 'base.html' %}
+{%block body%}
+
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Services</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Services</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub banner end -->
+
+<!-- About us start -->
+
+<div class="about-us content-area-5 bg-grea">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                <div class="about-slider-box simple-slider">
+                    <img class="d-block w-100" src="../static/img/img.jpg" alt="Services">
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12 align-self-center">
+                <div class="about-text align-self-center">
+                    {%for i in services%}
+                    <h3>{{i.name}}</h3>
+                    {%endfor%}
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could morning, when Gregor Samsa woke from troubled dreams, he found himself</p>
+                    <p class="mb-0">morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About us end -->
+
+<!-- Services start -->
+<div class="services content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Our Service</h1>
+        </div>
+        <div class="row">
+            {%for i in service%}
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="media service-item">
+                    <a class="icon" href="#">
+                        <i class="flaticon-search"></i>
+                    </a>
+                    <div class="media-body align-self-center">
+                      <a href="/service_detail/{{i.slug}}">  <h5>{{i.name}}</h5></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+            <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="media service-item">
+                    <a class="icon" href="#">
+                        <i class="flaticon-password"></i>
+                    </a>
+                    <div class="media-body align-self-center">
+                        <h5>Job Security</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    </div>
+                </div>
+            </div> -->
+           
+          
+           
+        </div>
+    </div>
+</div>
+<!-- Services end -->
+
+<!-- Counters strat -->
+
+<!-- Counters end -->
+
+<!-- Team section strat -->
+<div class="team-section content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Our Team</h1>
+        </div>
+        <div class="row">
+            {%for i in company%}
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team">
+                    <div class="photo">
+                        <a href="#">
+                            <img src="/media/{{i.image}}" style="height: 130px;" alt="avatar" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="team-details my-2">
+                        <h5><a href="#">{{i.name}}</a></h5>
+
+                        <!-- <p>Web Developer</p> -->
+                        <ul class="social-list clearfix">
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+           
+           
+        </div>
+    </div>
+</div>
+<!-- Partners strat -->
+
+<!-- Partners end -->
+
+<!-- Footer start -->
+
+
+{%endblock%}

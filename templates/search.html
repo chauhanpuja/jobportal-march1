@@ -1,0 +1,88 @@
+
+{%extends 'base.html' %}
+{%block body%}
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Job Grid</h1>
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Job Grid</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub banner end -->
+
+<!-- job grid section start -->
+<div class="job-grid-section content-area-5">
+    <div class="container">
+        <h1 class="">Jobs Reuirement</h1>
+    </div>
+    <div class="container my-5 ">
+        
+        <div class="row">
+          
+            <div class="col-12">
+                
+                <div class="row">
+                    {% if job|length < 1 %}
+                    <p style="background-color:brown;font-size:large;color:black"><b>OOPS! Now This Criteria Jobs has been Closed</b></p>
+
+                    {% endif %}
+                    
+                    {%for jobs in job%}
+                    <div class="col-lg-4 col-md-6 col-sm-6" >
+                        <div class="job-item-2" style="height: 250px;"> 
+                            <a class="icon" href="#">
+                               
+                            </a>
+                            <h2><a href="#">{{jobs.name}}</a></h2>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="flaticon-pin"></i> {{jobs.city}}</li>
+                                    <li><i class="flaticon-clock"></i> {{jobs.timing}}</li>
+                                    <li><i class="flaticon-discount"></i> {{jobs.salary}}</li>
+                                </ul>
+                            </div>
+                            <div class="my-5" style="align-items: center;" >
+                                <a href="/apply"  class="apply-button">Apply Now</a>
+                            <!-- <form action="/current_job_openning">
+                                <input type="text" name="name"  id="name" hidden>
+                                <input type="email" name="email"  id="email" hidden>
+                                <input type="address" name="email"  id="email" hidden>
+                            
+                            </form> -->
+                        </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    <!-- <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="job-item-2">
+                            <a class="icon" href="#">
+                                <div class="company-logo">
+                                    <img src="img/company-logo/logo-3.png" alt="logo">
+                                </div>
+                            </a>
+                            <h4><a href="#">Web Designer</a></h4>
+                            <div class="job-ad-item">
+                                <ul>
+                                    <li><i class="flaticon-pin"></i> New York City</li>
+                                    <li><i class="flaticon-clock"></i> Full Time</li>
+                                    <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="apply-button">Apply Now</a>
+                        </div>
+                    </div> -->
+                
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
+<!-- job grid section end -->
+{%endblock%}

@@ -1,0 +1,70 @@
+{%extends 'admin_navigation.html' %}
+{% block body %}
+
+<div class="sub-banner">
+    <div class="container" >
+        <div class="breadcrumb-area">
+            <h1>User</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+
+{%for msg in messages%}
+ <div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+   <strong>Message : </strong> {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+ {%endfor%}
+
+<h1 class="mt-5"></h1>
+<div class="container">
+    <table class="table" >
+        <thead>
+          <tr style="color:white;background-color: brown;text-align:center">
+            <th >S.NO.</th>
+            <th >NAME</th>
+            <th>CONTACT</th>
+            <th>GENDER</th>
+            <th>COMPANY</th>
+            <th>STATUS</th>
+
+            <th>IMAGE</th>
+            <th> </th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in user%}
+            <tr style="color:white;background-color:cadetblue;text-align:center">
+            
+            <td>{{i.id}}</td>
+            <td>{{i.user}}</td>
+            <td>{{i.mobile}}</td>
+            <td>{{i.gender}}</td>
+            <td>{{i.company}}</td>
+            <td>{{i.status}}</td>
+
+            <td> <img src="media/{{i.image}}" class="rounded-circle" style="height:50px;" alt=""> </td>
+            
+           
+            <td><a href="{% url 'change_status' i.id %}"><button class="btn btn-danger">change status</button></a></td>
+            
+            
+            </tr>
+          {%endfor%}
+         
+        </tbody>
+      </table>
+</div>
+
+
+
+{%endblock%}

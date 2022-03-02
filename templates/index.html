@@ -1,0 +1,347 @@
+{%extends 'base.html' %}
+{%block body%}
+{%load static%}
+<!-- Main header end -->
+
+<!-- Banner start -->
+ 
+
+
+<div class="banner" id="banner">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            
+            <div class="carousel-item item-bg active">
+                <img class="d-block w-100 h-100" src="{% static 'img/banner/banner-3.jpg' %}" alt="banner">
+                <div class="carousel-caption banner-slider-inner d-flex h-100">
+                    <div class="carousel-content container">
+                        <div class="banner-inner mt-60">
+                            <div class="text-center">
+                               
+
+                                <h3 class="b-text">Find the Job That Fits Your Life</h3>
+                                <!-- <p class="p-text">We offer jobs vacation right now</p> -->
+                                <div class="inline-search-area ml-auto" style="padding: 100px;">
+                                    <form action="/search" method="get" >
+                                    <div class="search-boxs">
+                                        <div class="search-col">
+
+                                            <input type="text" name="query" class="form-control has-icon b-radius" placeholder="Job title or Keywords">
+                                        </div>
+                                        <!-- <div class="search-col">
+                                            <select class="selectpicker search-fields" name="location">
+                                                <option>Location</option>
+                                                <option>New York</option>
+                                                <option>Australian</option>
+                                                <option>Canada</option>
+                                                <option>London</option>
+                                            </select>
+                                        </div> -->
+                                        <div class="find">
+                                            <button class="btn button-theme btn-search btn-block b-radius" type="submit"> 
+                                                <i class="fa fa-search"></i><strong>Find Job</strong>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- banner end -->
+
+
+ <!-- messages -->
+ {%for msg in messages%}
+ <div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+   <strong>Message : </strong> {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+ {%endfor%}
+
+<!-- Popular categories strat -->
+<div class="popular-categories content-area-7 bg-grea">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Popular Categories</h1>
+        </div>
+        <div class="row">
+
+            {%for cat in catt%}
+            <div class="col-lg-4 col-md-6">
+                <div class="media categorie-box-2">
+                    <a class="icon" href="#">
+                        <i class="flaticon-money"></i>
+                    </a>
+                    <div class="media-body align-self-center">
+                       <a href="/category={{cat.slug}}"> <h5>{{cat.name}}</h5></a>
+                        <!-- <span>(2143)</span> -->
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="media categorie-box-2">
+                    <a class="icon" href="#">
+                        <i class="flaticon-student"></i>
+                    </a>
+                    <div class="media-body align-self-center">
+                        <h5>Education Training</h5>
+                        <span>(2143)</span>
+                    </div>
+                </div>
+            </div> -->
+           
+          
+          
+         
+           
+           
+          
+
+        </div>
+    </div>
+</div>
+<!-- Popular categories end -->
+
+<!-- Counters strat -->
+
+ <div class="counters">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-box">
+                    <i class="flaticon-user"></i>
+                    <!-- <h1 class="counter">1967</h1> -->
+                    <p>Services</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-box">
+                    <i class="flaticon-work"></i>
+                    <!-- <h1 class="counter">667</h1> -->
+                    <p>Jobs</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-box">
+                    <i class="flaticon-portfolio"></i>
+                    <!-- <h1 class="counter">475</h1> -->
+                    <p>Resumes</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="counter-box">
+                    <i class="flaticon-branch"></i>
+                    <!-- <h1 class="counter">475</h1> -->
+                    <p>Companies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<!-- Counters end -->
+
+<!-- Team section strat -->
+
+<!-- Team end strat -->
+
+
+<!-- Team section strat -->
+<div class="team-section content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Our Team</h1>
+        </div>
+        <div class="row">
+            {%for i in company%}
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team">
+                    <div class="photo">
+                        <a href="#">
+                            <img src="/media/{{i.image}}" style="height: 130px;" alt="avatar" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="team-details my-2">
+                        <h5><a href="#">{{i.name}}</a></h5>
+
+                        <!-- <p>Web Developer</p> -->
+                        <!-- <ul class="social-list clearfix">
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul> -->
+                    
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+           
+           
+        </div>
+    </div>
+</div>
+<!-- Team end strat -->
+
+
+<!-- Job section strat -->
+<div class="job-section content-area-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-title-2">
+                    <h1>Recent Jobs</h1>
+                    <!-- <a href="#" class="float-right baj">Browse All Jobs</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {%for jobs in job%}
+            <div class="col-lg-12">
+                <div class="job-item media">
+                    <a class="icon" href="#">
+                        <div class="company-logo">
+                            <img src="{% static 'img/company-logo/logo-3.png' %}" alt="logo">
+                        </div>
+                    </a>
+                    <div class="media-body align-self-center">
+                        <h4><a href="#">{{jobs.name}}</a></h4>
+                        <div class="job-ad-item">
+                            <ul>
+                                <li><i class="flaticon-pin"></i> {{jobs.city}}</li>
+                                <li><i class="flaticon-clock"></i> {{jobs.timing}}</li>
+                                <li><i class="flaticon-discount"></i>{{jobs.salary}}</li>
+                            </ul>
+                        </div>
+                        <div class="div-right">
+                            <a href="/apply" class="apply-button">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="job-item media">
+                    <a class="icon" href="#">
+                        <div class="company-logo">
+                            <img src="{% static 'img/company-logo/logo-4.png' %}" alt="logo">
+                        </div>
+                    </a>
+                    <div class="media-body align-self-center">
+                        <h4><a href="#">Technical Database Engineer</a></h4>
+                        <div class="job-ad-item">
+                            <ul>
+                                <li><i class="flaticon-pin"></i> New York City</li>
+                                <li><i class="flaticon-clock"></i> Full Time</li>
+                                <li><i class="flaticon-discount"></i> $25,00 - $35,00</li>
+                            </ul>
+                        </div>
+                        <div class="div-right">
+                            <a href="#" class="apply-button">Apply Now</a>
+                        </div>
+                    </div>
+                </div> -->
+               
+               
+               
+            </div>
+            {%endfor%}
+
+        </div>
+    </div>
+</div>
+<!-- Job section end -->
+
+<!-- Testimonial start -->
+
+    
+</div>
+<!-- Testimonial end -->
+<!-- Team section strat -->
+<div class="team-section content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Certificates</h1>
+        </div>
+        <div class="row">
+            {%for i in certificate%}
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team">
+                    <div class="photo">
+                        <a href="#">
+                            <img src="/media/{{i.image}}" style="height: 130px;" alt="avatar" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="team-details my-2">
+                        <!-- <h5><a href="#">{{i.name}}</a></h5> -->
+
+                        <!-- <p>Web Developer</p> -->
+                        <!-- <ul class="social-list clearfix">
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+           
+           
+        </div>
+    </div>
+</div>
+<!-- Team end strat -->
+<!-- Blog start -->
+
+
+
+<!-- <div class="blog content-area bg-grea">
+    <div class="container">
+       
+        <div class="main-title">
+            <h1>Top Company</h1>
+        </div>
+        <div class="container">
+            <div class="slick-slider-area">
+                <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+                    {%for i in company%}
+                    <div class="slick-slide-item ">
+                      
+                        
+                        <div class="blog-3">
+                            <div class="blog-photo ">
+                                <a href="/detail/{{i.slug}}"><img src="/media/{{i.image}}"  style="height: 130px;" alt="blog" class="img-fluid"></a>
+                            </div>
+                            <div class="detail">
+                                <h3>
+                                    <a href="/detail/{{i.slug}}">{{i.name}}</a>
+                                </h3>
+                               
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    {%endfor%}
+                   
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+{%endblock%}

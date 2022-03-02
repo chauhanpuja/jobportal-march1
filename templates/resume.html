@@ -1,0 +1,146 @@
+{%extends 'user/user_navigation.html' %}
+{%block body%}
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Post Your Resume</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Resume</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub banner end -->
+
+<!-- Contact 1 start -->
+<div class="contact-1 content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Resume</h1>
+        </div>
+        <!-- Contact info -->
+        <div class="contact-info">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-pin"></i>
+                    <p>Office Address</p>
+                    <strong>20/F Green Road, Dhaka</strong>
+                </div>
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-phone"></i>
+                    <p>Phone Number</p>
+                    <strong>+55 417 634 7071</strong>
+                </div>
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-mail"></i>
+                    <p>Email Address</p>
+                    <strong>info@themevessel.com</strong>
+                </div>
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-internet"></i>
+                    <p>Web</p>
+                    <strong>info@themevessel.com</strong>
+                </div>
+            </div>
+        </div>
+        <form action="/resume" method="post" enctype="multipart/form-data">{%csrf_token%}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+
+                       
+                        
+                        <div class="col-md-6">
+                            <div class="form-group name">
+                                <input type="text" name="name" class="form-control" placeholder="Name">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 ">
+                            <label for="carrier">Choose Your Gender</label>
+                            <select name="gender" id="carrier">
+                                <option value="none" selected disabled >Select Your Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                
+                                
+                            </select>
+                        </div>
+                       
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <input type="text" name="address" class="form-control" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group number">
+                                <input type="text" name="phone" class="form-control" placeholder="Number">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="appointment-input">
+                                <label for="resume">Attach Your Resume</label>
+                                <input type="file" name="resume" id="resume" placeholder="Attach Your Resume">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="carrier">Choose Your Field</label>
+                            <select name="carrier" id="carrier">
+                                <option value="none" selected disabled>Choose Your Carrier in Related Field</option>
+                                {%for i in catt%}
+                                <option value="it">{{i.name}}</option>
+                                {%endfor%}
+                                <!-- <option value="hr">HR</option>
+                                <option value="business">Business</option>
+                                <option value="consult">Consult</option> -->
+                                
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 my-3">
+                            <div class="form-group email">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6 my-3">
+                            <div class="form-group email">
+                                <input type="text" name="salary" class="form-control" placeholder="Annually Current Salary">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="form-group email">
+                                <input type="text" name="exp" class="form-control" placeholder="Total Work Experience">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group message">
+                                <textarea class="form-control" name="desc" placeholder="Write message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="send-btn text-center">
+                                <button type="submit" class="btn btn-md button-theme" style="width:800px">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact 1 end -->
+
+<!-- Google map start -->
+
+<!-- Google map end -->
+
+<!-- Footer start -->
+{%endblock%}

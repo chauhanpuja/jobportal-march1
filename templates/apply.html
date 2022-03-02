@@ -1,0 +1,156 @@
+{%extends 'base.html' %}
+{%block body%}
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Apply Job</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Apply</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub banner end -->
+<!-- {%for msg in messages%}
+ <div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+   <strong>Message : </strong> {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+ {%endfor%} -->
+<!-- Contact 1 start -->
+<div class="contact-1 content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Apply on a Job</h1>
+        </div>
+        <!-- Contact info -->
+        <div class="contact-info">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-pin"></i>
+                    <p>Office Address</p>
+                    <strong>20/F Green Road, Dhaka</strong>
+                </div>
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-phone"></i>
+                    <p>Phone Number</p>
+                    <strong>+55 417 634 7071</strong>
+                </div>
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-mail"></i>
+                    <p>Email Address</p>
+                    <strong>info@themevessel.com</strong>
+                </div>
+                <div class="col-md-3 col-sm-6 mrg-btn-50">
+                    <i class="flaticon-internet"></i>
+                    <p>Web</p>
+                    <strong>info@themevessel.com</strong>
+                </div>
+            </div>
+        </div>
+        <form action="/apply" method="POST" enctype="multipart/form-data"> {%csrf_token%}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group name">
+                                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group number">
+                                <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>  
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <input type="text" name="address" class="form-control" placeholder="address" required>
+                            </div>
+                        </div>
+
+                       
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <input type="text" name="city" class="form-control" placeholder="city" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <input type="text" name="field" class="form-control" placeholder="Job Criteria Field" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <input type="text" name="exp" class="form-control" placeholder="Total work Experience" required>
+                               
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12 p-0">
+                            <div class="appointment-input">
+                                <label for="resume">Attach Your Resume</label>
+                                <input type="file" name="resume" id="resume" placeholder="Attach Your Resume">
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <label for="gender"></label>
+                            <select name="gender" id="gender"  >
+                                <option value="none" selected disabled > Gender </option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                
+                            </select>
+                        </div> -->
+                        <!-- <div class="col-md-12">
+                            <div class="form-group message">
+                                <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                            </div>
+                        </div> -->
+                        <div class="col-md-12 my-4">
+                            <div class="send-btn text-center">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-md button-theme" style="width: 400px;">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-4">
+                    <div class="opening-hours bg-light">
+                        <h3>Opening Hours</h3>
+                        <ul class="list-style-none">
+                            <li><strong>Sunday</strong> <span class="text-red"> closed</span></li>
+                            <li><strong>Monday</strong> <span> 10 AM - 8 PM</span></li>
+                            <li><strong>Tuesday </strong> <span> 10 AM - 8 PM</span></li>
+                            <li><strong>Wednesday </strong> <span> 10 AM - 8 PM</span></li>
+                            <li><strong>Thursday </strong> <span> 10 AM - 8 PM</span></li>
+                            <li><strong>Friday </strong> <span> 10 AM - 8 PM</span></li>
+                            <li><strong>Saturday </strong> <span> 10 AM - 8 PM</span></li>
+                        </ul>
+                    </div>
+                </div> -->
+           
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact 1 end -->
+
+<!-- Google map start -->
+
+<!-- Google map end -->
+
+<!-- Footer start -->
+{%endblock%}

@@ -1,0 +1,302 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>opportunityhubb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-submenu.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/leaflet.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/map.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/linearicons/style.css' %}">
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/jquery.mCustomScrollbar.css' %}">
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/dropzone.css' %}">
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/slick.css' %}">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="{% static 'css/skins/red.css' %}">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon" >
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7CRaleway:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ie10-viewport-bug-workaround.css' %}">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script  src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script  src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script  src="js/html5shiv.min.js"></script>
+    <script  src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="page_loader"></div>
+
+<!-- Main header start -->
+<header class="main-header header-transparent sticky-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/"><img src="{% static 'img/logo-black.png' %}" alt=""></a>
+          <!-- <a href="/">  <h4 style="color: white;">Opportunityhubb</h4></a> -->
+            <!-- <a class="navbar-brand logo" href="index.html">
+                <img src="img/logo1.png">
+            </a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav header-ml">
+                     <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="user_home" id="navbarDropdownMenuLink" >
+                            Home
+                        </a>
+                        
+                    </li> 
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" >
+                            About
+                        </a>
+                       
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/current_job_oppening" id="navbarDropdownMenuLink" >
+                           Jobs
+                        </a>
+                   </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/resume" id="navbarDropdownMenuLink" >
+                            Post Resume
+                        </a>
+                   </li>
+                    
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Job
+                        </a>
+                        <ul class="dropdown-menu dm-2" aria-labelledby="navbarDropdownMenuLink10">
+                            <li><a class="dropdown-item" href="/resume">Post Your Resume</a></li>
+                            <li><a class="dropdown-item" href="/current_job_oppening">Current Job Recruitment</a></li>
+                            
+                        </ul>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/contact" id="navbarDropdownMenuLink" >
+                            Contact
+                        </a>
+                   </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/userlogout" id="navbarDropdownMenuLink" >
+                            Logout
+                        </a>
+                   </li>
+                   
+                   <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Account
+                    </a> -->
+                    <!-- <ul class="dropdown-menu dm-2" aria-labelledby="navbarDropdownMenuLink10">
+                        {%if user.is_authenticated%}
+
+                        <li><a class="dropdown-item" >{{request.user}}</a></li>
+                        <li><a class="dropdown-item" href="/userlogout">Logout</a></li>
+                        {%else%}
+                        <li><a class="dropdown-item" href="/userlogin">Login</a></li>
+                        <li><a class="dropdown-item" href="/signup">Register</a></li>
+                        {%endif%}
+                       
+                    </ul> -->
+                    <!-- <ul class="dropdown-menu dm-2" aria-labelledby="navbarDropdownMenuLink10"> -->
+                        
+
+                        <!-- <li><a class="dropdown-item" >{{request.user}}</a></li> -->
+                        <!-- <li><a class="dropdown-item" href="user_login">user login</a></li>
+                        <li><a class="dropdown-item" href="#">recruiter login</a></li>
+                        <li><a class="dropdown-item" href="#">admin login</a></li> -->
+                       
+                       
+                    </ul>
+                </li>
+                  
+                </ul>
+
+               
+
+             <ul class="navbar-nav ml-auto">
+             
+                    <li class="nav-item">
+                        <a href="/resume" class="nav-link link-color"><i class="flaticon-plus"></i>Post your Resume</a>
+                    </li>
+                </ul> 
+         
+        </div>
+        </nav>
+    </div>
+</header>
+
+
+{%block body%} {%endblock%}
+
+
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="footer-item clearfix">
+                    <img src="{% static 'img/logo1.png' %}" height="20px" alt="logo" class="f-logo">
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="flaticon-pin"></i>20/F Green Road, Dhanmondi, Dhaka
+                        </li>
+                        <li>
+                            <i class="flaticon-mail"></i><a href="mailto:sales@hotelempire.com">info@themevessel.com</a>
+                        </li>
+                        <li>
+                            <i class="flaticon-internet"></i><a href="mailto:sales@hotelempire.com">info@themevessel.com</a>
+                        </li>
+                        <li>
+                            <i class="flaticon-phone"></i><a href="tel:+55-417-634-7071">+0477 85X6 552</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-item">
+                    <h4>Helpful Links</h4>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul class="links">
+                        <li>
+                            <a href="/about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/contact">Contact Us</a>
+                        </li>
+                       
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-item">
+                    <h4>Job Seekers</h4>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul class="links">
+                        <li>
+                            <a href="/resume">Post Your Resume</a>
+                        </li>
+                        <li>
+                            <a href="/current_job_oppening">Jobs</a>
+                        </li>
+                        <!-- <li>
+                            <a href="pricing-tables.html">My Oficiona</a>
+                        </li> -->
+                        <!-- <li>
+                            <a href="contact.html">FAQ</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                <div class="footer-item">
+                    <h4>Services</h4>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul class="links">
+                        {%for i in s%}
+                        <li>
+                            <a href="/service_detail/{{i.slug}}">{{i.name}}</a>
+                        </li>
+                        {%endfor%}
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-8 col-sm-12">
+                <div class="footer-item clearfix">
+                    <h4>Newsletter</h4>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <div class="Subscribe-box">
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-md-12">
+                    <p class="copy">© 2020 <a href="#">Theme Vessel.</a> All Rights Reserved.</p>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-12">
+                    <ul class="social-list clearfix">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script  src="{% static 'js/bootstrap-submenu.js' %}"></script>
+<script  src="{% static 'js/rangeslider.js' %}"></script>
+<script  src="{% static 'js/jquery.mb.YTPlayer.js' %}"></script>
+<script  src="{% static 'js/bootstrap-select.min.js' %}"></script>
+<script  src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script  src="{% static 'js/jquery.scrollUp.js' %}"></script>
+<script  src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script  src="{% static 'js/leaflet.js' %}"></script>
+<script  src="{% static 'js/leaflet-providers.js' %}"></script>
+<script  src="{% static 'js/leaflet.markercluster.js' %}"></script>
+<script  src="{% static 'js/moment.min.js' %}"></script>
+<script  src="{% static 'js/daterangepicker.min.js' %}"></script>
+<script  src="{% static 'js/dropzone.js' %}"></script>
+<script  src="{% static  'js/slick.min.js' %}"></script>
+<script  src="{%static  'js/jquery.filterizr.js' %}"></script>
+<script  src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script  src="{%static  'js/jquery.countdown.js' %}"></script>
+<script  src="{% static 'js/maps.js' %}"></script>
+<script  src="{% static 'js/app.js' %}"></script>
+
+
+<script  src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+<script  src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+</body>
+</html>

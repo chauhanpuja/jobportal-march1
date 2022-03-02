@@ -1,0 +1,138 @@
+{% extends  'user/user_navigation.html' %}
+{%block body %}
+
+<div class="sub-banner">
+    <div class="container">
+
+
+        <div class="breadcrumb-area">
+            <h1>User Profile</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">{{user}} Logged In</li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+
+{%for msg in messages%}
+<div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message : </strong> {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{%endfor%}
+<div class="contact-1 content-area-5">
+   <div class="container">
+
+    <div class="row">
+        <div class="col-sm-8">
+
+   <form action="/user_home" method="post" enctype="multipart/form-data">{%csrf_token%}
+   <div class="row">
+       <div class="col-lg-12">
+           <div class="row">
+
+              
+               
+               <div class="col-md-6">
+                   <div class="form-group name">
+                       <label for="">Name</label>
+                       
+                       <input type="text" name="name" value="{{user}}" class="form-control" placeholder="Name">
+                   </div>
+               </div>
+
+              
+              
+               <div class="col-md-6">
+                   <div class="form-group subject">
+                       <label for="">Address</label>
+                       <input type="text" name="address" value="{{user.address}}" class="form-control" placeholder="Address">
+                   </div>
+               </div>
+               <div class="col-md-6">
+                   <div class="form-group number">
+                       <label for="">Contact</label>
+                       <input type="text" name="phone" value="{{user.mobile}}" class="form-control" placeholder="Contact Number">
+                   </div>
+               </div>
+               
+               <!-- <div class="col-md-6">
+                   <div class="appointment-input">
+                       <label for="resume">Attach Your Resume</label>
+                       <input type="file" name="resume" id="resume" placeholder="Attach Your Resume">
+                   </div>
+               </div> -->
+             
+               
+               <div class="col-md-6">
+                   <div class="form-group email">
+                       <label for="">Email</label>
+                       <input type="email"
+                        name="email" value="{{user.user.email}}" class="form-control" placeholder="Email">
+                   </div>
+               </div>
+
+               <div class="col-md-6">
+                <div class="form-group email">
+                    <label for="">Gender</label>
+                    <input type="text" name="gender" value="{{user.gender}}" class="form-control" placeholder="Email">
+                </div>
+            </div>
+
+               <!-- <div class="col-md-6">
+               <div class="form-group">
+                   <label for="">Password</label>
+                   <input type="password" name="pass1" value="{{user.user.password}}" class="form-control" placeholder="Password">
+               </div>
+               </div>
+               -->
+               <!-- <div class="col-md-6">
+                   <div class="form-group">
+                       <label for="">Confirm Password</label>
+                       <input type="password" name="pass2" class="form-control" placeholder="Confirm Password">
+                   </div>
+                   </div>
+                -->
+                   <!-- <div class="col-md-6 mt-5 ">
+                       <label for="">Choose Your Gender</label>
+                       <select name="gender" id="carrier">
+                           
+                           <option value="none" selected disabled >Select Your Gender</option>
+                           <option value="{{user.gender}}">{{user.gender}}</option>
+                           <option value="{{user.gender}}">{{user.gender}}</option>
+                           
+                           
+                       </select>
+                   </div> -->
+               <div class="col-md-6 mt-3">
+                   <div class="appointment-input">
+                       <label for="image">Image</label>
+                       <input type="file" name="image" id="image"  placeholder="Attach Your Photo">
+                   </div>
+               </div>
+               
+               <div class="col-md-12 mt-5">
+                   <div class="send-btn text-center">
+                       <button type="submit" class="btn btn-md button-theme" style="width:600px">Edit</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+     
+   </div>
+   </form>
+   </div>
+<!-- 2 col -->
+   <div class="col-sm-4">
+    <img src="{{user.image.url}}" width="300px" height="300px" alt="">
+   </div>
+</div>
+   </div>
+
+</div>
+
+{%endblock%}

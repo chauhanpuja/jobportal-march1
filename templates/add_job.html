@@ -1,0 +1,129 @@
+{% extends  'recruiter/recruiter_navigation.html' %}
+{%block body %}
+
+
+<div class="sub-banner">
+    <div class="container">
+
+
+        <div class="breadcrumb-area">
+            <h1>Add Job</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">{{user}} Logged In</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{%for msg in messages%}
+ <div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+   <strong>Message : </strong> {{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+ {%endfor%}
+
+<h1 class="mt-5"></h1>
+<div class="container">
+
+    <form action="{% url 'add_job' %}" method="post" enctype="multipart/form-data">{%csrf_token%}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+    
+                   
+                    
+                    <div class="col-md-6">
+                        <div class="form-group name">
+                            <label for="">Job Title</label>
+                            
+                            <input type="text" name="title" class="form-control" placeholder="Job Title">
+                        </div>
+                    </div>
+    
+                   
+                   
+                    <div class="col-md-6">
+                        <div class="form-group subject">
+                            <label for="">COMPANY NAME</label>
+                            <input type="text" name="company_name" class="form-control" placeholder="COMPANY NAME">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group subject">
+                            <label for="">COMPANY Location</label>
+                            <input type="text" name="location" class="form-control" placeholder="COMPANY Location">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group subject">
+                            <label for="">Salary(Monthly)</label>
+                            <input type="text" name="salary" class="form-control" placeholder="Salary">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group subject">
+                            <label for="">Experince</label>
+                            <input type="text" name="exp" class="form-control" placeholder="Experince">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group email">
+                            <label for="">Start Date</label>
+                            <input type="date" name="start_date" class="form-control" placeholder="start Dtae">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group email">
+                            <label for="">End Date</label>
+                            <input type="date" name="end_date" class="form-control" placeholder="End Dtae">
+                        </div>
+                    </div>
+                      
+                    <!-- <div class="col-md-6">
+                        <div class="form-group email">
+                            <label for="">Creation Date</label>
+                            <input type="date" name="creation_date" class="form-control" placeholder="Creation Date">
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-6">
+                        <div class="form-group email">
+                            <label for="">City</label>
+                            <input type="text" name="city" class="form-control" placeholder="City">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group email">
+                            <label for="">Description</label>
+                            <input type="text" name="desc" class="form-control" placeholder="description">
+                        </div>
+                    </div>
+                        
+                    <div class="col-md-6 mt-5">
+                        <div class="appointment-input">
+                            <label >Company Logo</label>
+                            <input type="file" name="logo" id="logo" placeholder="Attach Your Photo">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 mt-5">
+                        <div class="send-btn text-center">
+                            <button type="submit" class="btn btn-md button-theme" style="width:800px">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        </form>
+
+
+
+
+
+</div>
+
+<h1 class="mt-4"></h1>
+{%endblock%}
